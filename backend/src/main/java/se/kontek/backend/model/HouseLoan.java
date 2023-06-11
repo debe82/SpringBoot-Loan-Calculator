@@ -27,10 +27,12 @@ public class HouseLoan extends Loan{
 
     String monthlyPlan =
             "The plan is: \n" +
+            "\n" +
             "Total loan amount: " + loanAmount + "\n" +
             "Payback time (in years): " + paybackTime + "\n" +
             "Interest rate: " + interest + "\n" +
-            "Monthly amount to pay: " + NumberFormat.getCurrencyInstance().format(monthlyPayment);
+            "Monthly amount to pay: " + NumberFormat.getCurrencyInstance().format(monthlyPayment) +
+            "\n";
 
     return monthlyPlan;
   }
