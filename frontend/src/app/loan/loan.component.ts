@@ -8,7 +8,7 @@ import { LoanService } from './loan.service';
   template: `
     <h1>{{title}}</h1>
     <li *ngFor = "let loan of loans">
-      <button>{{loan}}</button>
+      <a routerLink="/{{loan}}">{{loan}}</a>
     </li>  
     `
             
@@ -19,7 +19,6 @@ export class LoanComponent {
   loans: string[] = [];
   constructor(service: LoanService) {
     this.loans = service.getLoans();
-    console.log("loans: ", this.loans);
   }
   
 }
