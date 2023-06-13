@@ -13,13 +13,14 @@ export class HouseService {
   constructor(private http:HttpClient) {}
 
   sendData(data: dataModel) {
+    console.log("sendData.data: ", data);
     let houseUrl = BASE_URL + '/house';
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
       })
     };
-      return this.http.post<dataModel>(houseUrl, data, httpOptions);
+    return this.http.post<dataModel>(houseUrl, data, httpOptions);
   }
 
 }

@@ -34,6 +34,6 @@ public class HouseLoan extends Loan {
 
     double monthlyFee = getLoanAmount() * ( dividend / divisor);
 
-    return NumberFormat.getCurrencyInstance().format(monthlyFee);
+    return String.format("%.2f", monthlyFee);  //NumberFormat.getCurrencyInstance().format(monthlyFee);
   }
 }

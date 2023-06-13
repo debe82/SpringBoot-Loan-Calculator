@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { HouseService } from './house.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 
 export interface dataModel  {
     loanAmount: number,
     paybackTime: number,
-    interest: number,
     frequency: number,
     interestType: string
 }
@@ -23,9 +20,11 @@ export class HouseComponent {
   constructor(private service: HouseService) {};
   
   submit(data: dataModel) {
-    //console.log(data);
+    console.log("submit.data: ", data);
     //throw new Error('Method not implemented.');
-    this.service.sendData(data).subscribe();
+    this.service.sendData(data).subscribe((data) => {
+      console.log("subscribe.data: ", data);
+    });
   }
 
 

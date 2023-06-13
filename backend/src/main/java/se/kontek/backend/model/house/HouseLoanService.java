@@ -14,7 +14,7 @@ public class HouseLoanService {
         }
 
 
-        HouseLoan getHouseLoanForPlan = new HouseLoan(houseLoanDto.loanAmount(), houseLoanDto.paybackTime(), houseLoanDto.interest(), houseLoanDto.interestType());
+        HouseLoan getHouseLoanForPlan = new HouseLoan(houseLoanDto.loanAmount(), houseLoanDto.paybackTime(), 0.0, houseLoanDto.interestType());
         return getHouseLoanForPlan.getPlan(houseLoanDto.frequency());
     }
 }

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/house")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class HouseLoanController {
 
     @Autowired
@@ -21,6 +21,7 @@ public class HouseLoanController {
 
     @PostMapping
     ResponseEntity<String> getPlan(@RequestBody HouseLoanDto houseLoanDto, HttpServletRequest req){
+        System.out.println("dto:" + houseLoanDto);
         String plan = service.getPlan(houseLoanDto);
         if (plan == null) return ResponseEntity.badRequest().build();
         System.out.println("olan: " + plan);
