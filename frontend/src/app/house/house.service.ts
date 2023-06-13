@@ -27,4 +27,8 @@ export class HouseService {
     return [1 ,2, 3, 4, 6, 12];
   }
 
+  getInterestType() {
+    return ["fixed", "variable", "variable with cap"];
+  }
+
 }

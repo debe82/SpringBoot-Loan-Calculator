@@ -1,7 +1,6 @@
 package se.kontek.backend.model.house;
 
 import se.kontek.backend.model.general.HouseInterest;
-import se.kontek.backend.model.general.InterestRate;
 import se.kontek.backend.model.general.Loan;
 
 import java.text.NumberFormat;

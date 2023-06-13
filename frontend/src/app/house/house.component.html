@@ -1,17 +1,25 @@
 <p>house works!</p>
 
 <form #sendData = "ngForm" (ngSubmit)="submit(sendData.value); sendData.reset()">
+  <label>Loan Amount</label>
+  <br>
   <input type="text" name="loanAmount" placeholder="enter loan amount" ngModel/>
   <br><br>
+  <label>Payback Period (years)</label>
+  <br>
   <input type="text" name="paybackTime" placeholder="enter duration" ngModel/>
   <br><br>
-
-  <select #selectFreq (change)="onSelected(selectFreq.value)">
-    <option name="frequency" *ngFor="let type of payBackType">{{type}}</option>
+  <label>Payback Frequency (months)</label>
+  <br>
+  <select #selectFreq (change)="onPbSelected(selectFreq.value)">
+    <option name="frequency" *ngFor="let type of paybackType">{{type}}</option>
   </select>
   <br><br>
-
-  <input type="text" name="interestType" placeholder="enter type" ngModel/>
+  <label>Interest Type (fixed, variable, etc)</label>
+  <br>
+  <select #selectType (change)="onItSelected(selectType.value)">
+    <option name="interestType" *ngFor="let type of interestType">{{type}}</option>
+  </select>
   <br><br>
   <button>Send info</button>
 <form> 

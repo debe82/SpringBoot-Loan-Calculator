@@ -18,20 +18,31 @@ export class HouseComponent {
 
   title = "Post data";
   showData: any;
-  payBackType: number[] = [];
-  selectedType: string = "";
+  
+  interestType: string[] = [];
+  selectedIntType: string = "fixed";
+  
+  paybackType: number[] = [];
+  selectedPbType: string = "1";
+
 
   constructor(private service: HouseService) {
-    this.payBackType = service.getPayBackType();
+    this.paybackType = service.getPayBackType();
+    this.interestType = service.getInterestType();
   };
 
-  onSelected(freq: string) {
-    this.selectedType = freq;
+  onPbSelected(freq: string) {
+    this.selectedPbType = freq;
+  }
+
+  onItSelected(type: string) {
+    this.selectedIntType = type;
   }
   
   submit(data: dataModel) {
     console.log("submit.data: ", data);
-    data.frequency = parseInt (this.selectedType);
+    data.frequency = parseInt (this.selectedPbType);
+    data.interestType = this.selectedIntType;
     //throw new Error('Method not implemented.');
     this.service.sendData(data).subscribe((data) => {
       console.log("submit.data: ", data);
