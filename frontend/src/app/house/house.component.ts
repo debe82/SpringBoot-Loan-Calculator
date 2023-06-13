@@ -15,15 +15,27 @@ export interface dataModel  {
 
 
 export class HouseComponent {
-  title = "Post data";
 
-  constructor(private service: HouseService) {};
+  title = "Post data";
+  showData: any;
+  payBackType: number[] = [];
+  selectedType: string = "";
+
+  constructor(private service: HouseService) {
+    this.payBackType = service.getPayBackType();
+  };
+
+  onSelected(freq: string) {
+    this.selectedType = freq;
+  }
   
   submit(data: dataModel) {
     console.log("submit.data: ", data);
+    data.frequency = parseInt (this.selectedType);
     //throw new Error('Method not implemented.');
     this.service.sendData(data).subscribe((data) => {
-      console.log("subscribe.data: ", data);
+      console.log("submit.data: ", data);
+      this.showData = data;
     });
   }
 

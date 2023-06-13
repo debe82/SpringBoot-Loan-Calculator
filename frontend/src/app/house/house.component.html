@@ -5,9 +5,17 @@
   <br><br>
   <input type="text" name="paybackTime" placeholder="enter duration" ngModel/>
   <br><br>
-  <input type="text" name="frequency" placeholder="enter frequency" ngModel/>
+
+  <select #selectFreq (change)="onSelected(selectFreq.value)">
+    <option name="frequency" *ngFor="let type of payBackType">{{type}}</option>
+  </select>
   <br><br>
+
   <input type="text" name="interestType" placeholder="enter type" ngModel/>
   <br><br>
   <button>Send info</button>
 <form> 
+
+
+<p>Monthly fee: {{showData}}</p>
+

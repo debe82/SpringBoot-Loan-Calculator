@@ -23,4 +23,8 @@ export class HouseService {
     return this.http.post<dataModel>(houseUrl, data, httpOptions);
   }
 
+  getPayBackType() {
+    return [1 ,2, 3, 4, 6, 12];
+  }
+
 }
