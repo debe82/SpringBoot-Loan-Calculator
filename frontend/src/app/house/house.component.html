@@ -1,1 +1,13 @@
 <p>house works!</p>
+
+<form #sendData = "ngForm" (ngSubmit)="submit(sendData.value); sendData.reset()">
+  <input type="text" name="amount" placeholder="enter loan amount" ngModel/>
+  <br><br>
+  <input type="text" name="duration" placeholder="enter duration" ngModel/>
+  <br><br>
+  <input type="text" name="type" placeholder="enter type" ngModel/>
+  <br><br>
+  <input type="text" name="frequency" placeholder="enter frequency" ngModel/>
+  <br><br>
+  <button>Send info</button>
+<form> 

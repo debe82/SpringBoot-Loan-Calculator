@@ -7,6 +7,7 @@ import { LoanService } from './loan/loan.service';
 import { HouseComponent } from './house/house.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { HouseService } from './house/house.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule
   ],
   providers: [
-    LoanService
+    LoanService,
+    HouseService
   ],
   bootstrap: [AppComponent]
 })

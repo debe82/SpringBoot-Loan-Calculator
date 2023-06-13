@@ -1,23 +1,25 @@
-import { HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { dataModel } from "./house.component";
+import { Injectable } from "@angular/core";
+
 
 const BASE_URL  = "http://localhost:8080/api";
 
+@Injectable({
+  providedIn: 'root'
+})
 export class HouseService {
-  sendData(amount: number, duration: number, type: string, frequency: number) {
-    let data = 
-      {
-        loanAmount: amount,
-        paybackTime: duration,
-        interest: type,
-        frequency: frequency
-      };
-    let houseUrl = BASE_URL + '/houseloans';
+
+  constructor(private http:HttpClient) {}
+
+  sendData(data: dataModel) {
+    let houseUrl = BASE_URL + '/house';
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
       })
     };
-      return //this.http.post(houseUrl, data, httpOptions)
+      return this.http.post<dataModel>(houseUrl, data, httpOptions);
   }
 
 }
