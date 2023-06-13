@@ -1,5 +1,6 @@
 package se.kontek.backend.model.house;
 
+import se.kontek.backend.model.general.HouseInterest;
 import se.kontek.backend.model.general.InterestRate;
 import se.kontek.backend.model.general.Loan;
 
@@ -13,8 +14,8 @@ public class HouseLoan extends Loan {
   }
   public HouseLoan(int loanAmount, int paybackTime, double interest, String interestType) {
     super(loanAmount, paybackTime, interest);
-    InterestRate.HouseInterest houseInterest = InterestRate.HouseInterest.valueOf(interestType.toUpperCase());
-    setInterest(houseInterest.getInterestRate());
+    HouseInterest houseInterest = new HouseInterest(interestType);
+    setInterest(houseInterest.getInterests());
   }
 
   @Override

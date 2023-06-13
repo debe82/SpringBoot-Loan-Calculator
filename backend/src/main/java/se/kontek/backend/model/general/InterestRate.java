@@ -1,24 +1,15 @@
 package se.kontek.backend.model.general;
 
-public class InterestRate {
-    public enum HouseInterest {
-        FIXED(3.5),
-        VARIABLE(0.0),
-        VARIABLE_WITH_CAP(0.0);
+public abstract class InterestRate {
 
-        private double interestRate;
+    String interestType;
 
-        HouseInterest(double interestRate) {
-            this.interestRate = interestRate;
-        }
-
-        public double getInterestRate() {
-            return interestRate;
-        }
+    public String getType() {
+        return interestType;
     }
 
-    public enum CarInterest {
-
-
+    public InterestRate(String interest) {
+        this.interestType = interest;
     }
+
 }
