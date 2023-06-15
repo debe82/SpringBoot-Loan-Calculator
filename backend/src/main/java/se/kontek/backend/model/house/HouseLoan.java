@@ -11,9 +11,8 @@ public class HouseLoan extends Loan {
   public HouseLoan(int loanAmount, int paybackTime, double interest) {
     super(loanAmount, paybackTime, interest);
   }
-  public HouseLoan(int loanAmount, int paybackTime, double interest, String interestType) {
+  public HouseLoan(int loanAmount, int paybackTime, double interest, HouseInterest houseInterest) {
     super(loanAmount, paybackTime, interest);
-    HouseInterest houseInterest = new HouseInterest(interestType);
     setInterest(houseInterest.getInterests());
   }
 

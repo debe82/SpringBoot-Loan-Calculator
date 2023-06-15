@@ -13,6 +13,8 @@ public class HouseInterest extends InterestRate {
         return super.getType();
     }
 
+
+
     public double getInterests() {
 
         switch (getType()) {

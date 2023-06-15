@@ -7,9 +7,12 @@ import { LoanService } from './loan.service';
   selector: 'loan',
   template: `
     <h1>{{title}}</h1>
-    <li *ngFor = "let loan of loans">
-      <a routerLink="/{{loan}}">{{loan}}</a>
-    </li>  
+    <div *ngFor = "let loan of loans">
+      <a routerLink="/{{loan}}">
+        <button>{{loan}}</button>
+      </a>
+    </div>  
+    <br><br>
     `
             
 })

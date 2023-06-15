@@ -18,7 +18,7 @@ export class HouseComponent {
 
   title = "Post data";
   showData: any;
-  
+
   interestType: string[] = [];
   selectedIntType: string = "fixed";
   
