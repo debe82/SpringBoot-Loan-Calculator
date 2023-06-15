@@ -6,7 +6,5 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class HouseLoanControllerTest {
-
-
-
+  //tested via postman
 }

@@ -1,8 +1,8 @@
 package se.kontek.backend.model.general;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import se.kontek.backend.model.house.HouseInterest;
 
 import static org.junit.jupiter.api.Assertions.*;
 

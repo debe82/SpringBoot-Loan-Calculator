@@ -9,11 +9,12 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class HouseLoanServiceTest {
 
+  //values checked with https://www.calculator.net/loan-calculator.html
   @Autowired HouseLoanService service;
 
   @Test
   public void getFixedPlan() {
-    String expected = "1321.51";
+    String expected = "988.86";
 
     HouseLoanDto dto = new HouseLoanDto(100000, 10, 1,"fixed");
 
@@ -25,7 +26,7 @@ class HouseLoanServiceTest {
 
   @Test
   public void getVariablePlan() {
-    String expected = "1.0";
+    String expected = "876.04";
 
     HouseLoanDto dto = new HouseLoanDto(100000, 10, 1,"variable");
 

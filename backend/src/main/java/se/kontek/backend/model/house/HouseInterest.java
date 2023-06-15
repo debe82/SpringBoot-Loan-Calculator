@@ -1,4 +1,6 @@
-package se.kontek.backend.model.general;
+package se.kontek.backend.model.house;
+
+import se.kontek.backend.model.general.InterestRate;
 
 public class HouseInterest extends InterestRate {
 
