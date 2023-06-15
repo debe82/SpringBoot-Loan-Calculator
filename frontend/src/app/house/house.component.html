@@ -3,12 +3,12 @@
 <form name="houseForm" #sendData = "ngForm" (ngSubmit)="submit(sendData.value); sendData.reset()">
   <label>Loan Amount</label>
   <br>
-  <input type="text" name="loanAmount" ng-model="loanAmount" placeholder="enter loan amount" required ngModel/>
+  <input type="text" name="loanAmount" ng-model="loanAmount" placeholder="enter loan amount" required ngModel pattern="^[0-9]*$"/>
     <span ng-show="houseForm.loanAmount.$untouched || houseForm.loanAmount.$invalid">* required.</span>
   <br><br> 
   <label>Payback Period (years)</label>
   <br>
-  <input type="text" name="paybackTime" ng-model="paybackTime" placeholder="enter duration" required ngModel/>
+  <input type="text" name="paybackTime" ng-model="paybackTime" placeholder="enter duration" required ngModel pattern="^[0-9]*$"/>
     <span ng-show="houseForm.paybackTime.$untouched || houseForm.paybackTime.$invalid">* required.</span>
   <br><br>
   <label>Payback Frequency (months)</label>

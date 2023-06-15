@@ -15,11 +15,8 @@ class HouseLoanServiceTest {
   @Test
   public void getFixedPlan() {
     String expected = "988.86";
-
     HouseLoanDto dto = new HouseLoanDto(100000, 10, 1,"fixed");
-
     String result = service.getPlan(dto);
-    System.out.println("result: " + result);
     assertTrue(expected.equals(result));
 
   }
@@ -27,11 +24,8 @@ class HouseLoanServiceTest {
   @Test
   public void getVariablePlan() {
     String expected = "876.04";
-
     HouseLoanDto dto = new HouseLoanDto(100000, 10, 1,"variable");
-
     String result = service.getPlan(dto);
-    System.out.println("result: " + result);
     assertTrue(expected.equals(result));
 
   }

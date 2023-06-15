@@ -11,6 +11,7 @@ export interface dataModel  {
 @Component({
   selector: 'house',
   templateUrl: './house.component.html',
+  styleUrls: ['./house.component.css']
 })
 
 
