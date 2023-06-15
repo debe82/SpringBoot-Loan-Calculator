@@ -30,4 +30,14 @@ class HouseLoanServiceTest {
 
   }
 
+  @Test
+  public void getTestPlan() {
+    String expected = "7557.45";
+    HouseLoanDto dto = new HouseLoanDto(100000, 10, 3,"test");
+    String result = service.getPlan(dto);
+    System.out.println("result: " + result);
+    assertTrue(expected.equals(result));
+
+  }
+
 }
