@@ -5,7 +5,7 @@ public abstract class Loan {
   public int paybackTime;
   public double interest;
 
-  protected Loan(int loanAmount, int paybackTime, double interest) {
+  protected Loan(int loanAmount, int paybackTime, double interest, InterestRate interestRate) {
     this.loanAmount = loanAmount;
     this.paybackTime = paybackTime;
     this.interest = interest;

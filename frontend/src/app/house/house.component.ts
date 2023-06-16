@@ -18,7 +18,14 @@ export interface dataModel  {
 export class HouseComponent {
 
   title = "Post data";
+  allData: dataModel = {
+    loanAmount: 0,
+    paybackTime: 0,
+    frequency: 1,
+    interestType: ""
+  }
   showData: any;
+  dataReceived: boolean = false;
 
   interestType: string[] = [];
   selectedIntType: string = "fixed";
@@ -44,10 +51,12 @@ export class HouseComponent {
     console.log("submit.data: ", data);
     data.frequency = parseInt (this.selectedPbType);
     data.interestType = this.selectedIntType;
+    this.allData = data;
     //throw new Error('Method not implemented.');
     this.service.sendData(data).subscribe((data) => {
       console.log("submit.data: ", data);
       this.showData = data;
+      this.dataReceived = true;
     });
   }
 

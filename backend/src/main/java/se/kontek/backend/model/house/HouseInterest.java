@@ -8,8 +8,6 @@ public class HouseInterest extends InterestRate {
         super(interestType);
     }
 
-    double interest = 0.0;
-
     @Override
     public String getType() {
         return super.getType();
@@ -18,20 +16,20 @@ public class HouseInterest extends InterestRate {
 
 
     public double getInterests() {
-
+        double interestPerType = 0.0;
         switch (getType()) {
             case "fixed":
-                interest = 3.5;
+                interestPerType = 3.5;
                 break;
             case "variable":
-                interest = setVariableInterest();
+                interestPerType = setVariableInterest();
                 break;
             case "test":
-                interest = 3;
+                interestPerType = 3;
                 break;
         }
 
-        return interest;
+        return interestPerType;
     }
 
 

@@ -27,5 +27,14 @@
 <form> 
   <br><br>
 
-<p>Monthly fee: {{showData}}</p>
+<div [hidden] = "!dataReceived">
+  Overview:
+  <br>
+  <label>Loan Amount: {{allData.loanAmount}}</label><br>
+  <label>Payback Time: {{allData.paybackTime}} </label><br>
+  <label>Number of payment per year: {{12 / allData.frequency}}</label><br>
+  <label>Interest Type: {{allData.interestType}}</label>
+  <br><br>
+  <label>Monthly fee: {{showData}}</label>
+</div>
 
