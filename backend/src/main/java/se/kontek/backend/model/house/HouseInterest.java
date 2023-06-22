@@ -24,9 +24,6 @@ public class HouseInterest extends InterestRate {
             case "variable":
                 interestPerType = setVariableInterest();
                 break;
-            case "test":
-                interestPerType = 3;
-                break;
         }
 
         return interestPerType;

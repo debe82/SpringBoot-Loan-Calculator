@@ -5,11 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.logging.Logger;
+
 @RestController
 @RequestMapping("/api/house")
 @CrossOrigin(origins = "http://localhost:4200")
 public class HouseLoanController {
-
+    Logger log = Logger.getLogger(HouseLoanController.class.getName());
     @Autowired
     HouseLoanService service;
 
@@ -21,10 +23,8 @@ public class HouseLoanController {
 
     @PostMapping
     ResponseEntity<String> getPlan(@RequestBody HouseLoanDto houseLoanDto, HttpServletRequest req){
-        System.out.println("dto:" + houseLoanDto);
-        String plan = service.getPlan(houseLoanDto);
-        if (plan == null) return ResponseEntity.badRequest().build();
-        System.out.println("olan: " + plan);
+        String plan = service.getMonthlyPayment(houseLoanDto);
+        if (plan == null) return ResponseEntity.notFound().build();
         return ResponseEntity.ok().body(plan);
     }
 }

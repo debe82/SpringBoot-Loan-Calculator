@@ -5,7 +5,7 @@ public abstract class Loan {
   public int paybackTime;
   public double interest;
 
-  protected Loan(int loanAmount, int paybackTime, double interest, InterestRate interestRate) {
+  protected Loan(int loanAmount, int paybackTime, double interest) {
     this.loanAmount = loanAmount;
     this.paybackTime = paybackTime;
     this.interest = interest;
@@ -35,6 +35,6 @@ public abstract class Loan {
     this.interest = interest;
   }
 
-  public abstract String getPlan(int paymentFrequency);
+  public abstract String getMonthlyFee(int paymentFrequency);
 
 }
